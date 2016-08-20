@@ -2,21 +2,21 @@ resources:
 
 #CLUSTERS
 
-  - name: ecs-cluster
+  - name: ecs-cluster2
     type: cluster
     integration: plv2-ecs
     pointer:
       sourceName : "testCL"
       region: "us-west-2"
       
-  - name: ecsclu1-invalidint
+  - name: ecsclu1-invalidint2
     type: cluster
     integration: plv2-ecstest
     pointer:
       sourceName : "testCL"
       region: "us-west-2"
       
-  - name: ecsclu2-invalidclu
+  - name: ecsclu2-invalidclu2
     type: cluster
     integration: plv2-ecs
     pointer:
@@ -25,7 +25,7 @@ resources:
         
 #IMAGES
         
-  - name: ecs-img1
+  - name: ecs-img12
     type: image
     integration: plv2-docker
     pointer:
@@ -33,7 +33,7 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: ecsimg2-tagdoesntexist
+  - name: ecsimg2-tagdoesntexist2
     type: image
     integration: plv2-docker
     pointer:
@@ -43,13 +43,13 @@ resources:
       
 # DOCKER OPTIONS:
   
-  - name: ecs-dopts1
+  - name: ecs-dopts12
     type: dockerOptions
     version:
       memory: 128
       #user: "driftking"
       
-  - name: ecs-dopts2invalid
+  - name: ecs-dopts2invalid2
     type: dockerOptions
     version:
       memory: 128
@@ -58,7 +58,7 @@ resources:
         
 #PARAMS
 
-  - name: ecs-params1
+  - name: ecs-params12
     type: params
     version:
       params:
@@ -68,7 +68,7 @@ resources:
 
 #REPLICAS
       
-  - name: ecs-scale2
+  - name: ecs-scale22
     type: replicas
     version:
       count: 2
