@@ -1,35 +1,35 @@
 triggers:
-   - name: ecs-tg1
+   - name: ecs-tg12
      type: trigger
      version:
        counter: 1
        
-   - name: ecs-tg2
+   - name: ecs-tg22
      type: trigger
      version:
        counter: 0
        
-   - name: ecs-tg3
+   - name: ecs-tg32
      type: trigger
      version:
        counter: 1
        
-   - name: ecs-tg4
+   - name: ecs-tg42
      type: trigger
      version:
        counter: 0
        
-   - name: ecs-tg5
+   - name: ecs-tg52
      type: trigger
      version:
        counter: 1
        
-   - name: ecs-tg6
+   - name: ecs-tg62
      type: trigger
      version:
        counter: 1
 
-   - name: ecs-tg7
+   - name: ecs-tg72
      type: trigger
      version:
        counter: 1
