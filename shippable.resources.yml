@@ -8,11 +8,11 @@ resources:
     pointer:
       sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
 
-  - name: flsv-dclcluster
-    type: cluster
-    integration: plv2-dcl
-    pointer:
-    sourceName : "cluster-dcl"
+  # - name: flsv-dclcluster
+  #   type: cluster
+  #   integration: plv2-dcl
+  #   pointer:
+  #   sourceName : "cluster-dcl"
 
   - name: flsv-ecscluster
     type: cluster
