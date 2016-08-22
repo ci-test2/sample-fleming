@@ -108,13 +108,13 @@ resources:
     seed:
       versionName: "nodeenv"
       
-  # - name: flsv-img4entrypoint
-  #   type: image
-  #   integration: plv2-docker
-  #   pointer:
-  #     sourceName: "scriptnull/debian"
-  #   seed:
-  #     versionName: "entrypoint"
+  - name: flsv-img4entrypoint
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "scriptnull/debian"
+    seed:
+      versionName: "entrypoint"
   
   - name: flsv-img5workingdir
     type: image
