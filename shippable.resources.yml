@@ -21,12 +21,12 @@ resources:
       sourceName : "testCL"
       region: "us-west-2"
       
-  # - name: flsv-gkecluster
-  #   type: cluster
-  #   integration: plv2-gke
-  #   pointer:
-  #     sourceName: "small-cluster" #name of the cluster we are deploying.
-  #     region: "us-east1-d"
+  - name: flsv-gkecluster
+    type: cluster
+    integration: plv2-gke
+    pointer:
+      sourceName: "small-cluster" #name of the cluster we are deploying.
+      region: "us-east1-d"
       
   - name: flsv-tripubcluster
     type: cluster
