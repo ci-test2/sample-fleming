@@ -36,10 +36,10 @@ resources:
       region: "us-east-2"
       
 #LOAD BALANCER
-  # - name: flsv-lb
-  #   type: loadBalancer
-  #   pointer:
-  #     sourceName: v2betatest
+  - name: flsv-lb
+    type: loadBalancer
+    pointer:
+      sourceName: v2betatest
       
 #VERSIONS
 
