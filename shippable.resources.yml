@@ -11,7 +11,7 @@ resources:
       
   - name: ecsclu1-invalidint
     type: cluster
-    integration: plv2-ecstest
+    integration: plv2-ecs
     pointer:
       sourceName : "testCL"
       region: "us-west-2"
@@ -33,7 +33,7 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: ecsimg2-tagdoesntexist
+  - name: ecsimg2#-tagdoesntexist
     type: image
     integration: plv2-docker
     pointer:
