@@ -18,3 +18,24 @@ jobs:
             port: 80
       - TASK: managed
         deployMethod: upgrade 
+        
+  - name: lb-release1
+    type: release
+    steps:
+      - IN: lb-version1
+      - IN: lb-ecsDeploy1
+      - TASK: managed
+        bump: patch
+        
+  - name: lb-ecsDeploy2
+    type: deploy
+    steps:
+      - IN: lb-release1
+      
+  - name: lb-release2
+    type: release
+    steps:
+      - IN: lb-version2
+      - IN: lb-ecsDeploy2
+      - TASK: managed
+        bump: major
