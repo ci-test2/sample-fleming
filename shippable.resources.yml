@@ -22,7 +22,7 @@ resources:
       sourceName: EC2Contai-EcsElast-17A64D22JHQLM
 
   - name: lb-loadb2
-    type: loadBalancer
+    type: loadBalancertest
     pointer:
       sourceName: shLoadBalancer
 
