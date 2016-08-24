@@ -4,6 +4,7 @@ jobs:
     steps:
       - IN: lb-imglb
       - IN: lb-dopt1
+      - IN: lb-params1
       - IN: lb-tg1
     flags:
       - release
