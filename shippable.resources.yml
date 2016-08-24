@@ -19,8 +19,24 @@ resources:
       isPull: true
     seed:
       versionName: "myapp3"
+      
+  - name: lb-imglb2
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "scriptnull/sample_node"
+      isPull: true
+    seed:
+      versionName: "myapp3"
 
   - name: lb-ecscluster
+    type: cluster
+    integration: plv2-ecs
+    pointer:
+      sourceName : "loadBalanceTest" #name of the cluster we are deploying
+      region: "us-east-1"
+      
+  - name: lb-ecscluster2
     type: cluster
     integration: plv2-ecs
     pointer:
@@ -32,10 +48,10 @@ resources:
     pointer:
       sourceName: EC2Contai-EcsElast-17A64D22JHQLM
 
-  # - name: lb-loadb2
-  #   type: loadBalancer
-  #   pointer:
-  #     sourceName: shLoadBalancer
+  - name: lb-loadb2
+    type: loadBalancer
+    pointer:
+      sourceName: shLoadBalancer
 
   - name: lb-dopt1
     type: dockerOptions
@@ -43,6 +59,13 @@ resources:
       memory: 200
       portMappings:
         - "80:80"  
+        
+  - name: lb-dopt2
+    type: dockerOptions
+    version:
+      memory: 200
+      portMappings:
+        - "80:80" 
         
   - name: lb-params1
     type: params
