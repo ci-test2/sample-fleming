@@ -24,7 +24,7 @@ resources:
   - name: lb-loadb2
     type: loadBalancer
     pointer:
-      sourceName: shLoadBalancertest
+      sourceName: shLoadBalancer
 
   - name: lb-dopt1
     type: dockerOptions
