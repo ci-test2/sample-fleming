@@ -1,5 +1,16 @@
 
 resources:
+
+  - name: lb-version1
+    type: version
+    seed:
+      versionName: "6.3.1"
+      
+  - name: lb-version2
+    type: version
+    seed:
+      versionName: "1.2.3"
+      
   - name: lb-imglb
     type: image
     integration: plv2-docker
