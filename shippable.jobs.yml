@@ -46,18 +46,18 @@ jobs:
   - name: lb-mani2
     type: manifest
     steps:
-      - IN: lb-imglb
-      - IN: lb-dopt1
+      - IN: lb-imglb2
+      - IN: lb-dopt2
       - IN: lb-tg1
     flags:
       - loadbalancer
         
-  - name: lb-ecsDeploy2
+  - name: lb-ecsDeploy3
     type: deploy
     steps:
       - IN: lb-mani2
-      - IN: lb-ecscluster
-      - IN: lb-loadb1
+      - IN: lb-ecscluster2
+      - IN: lb-loadb2
         applyTo:
           - manifest: lb-mani2 # it can only apply to one manifest
             image: lb-imglb # it can only apply to one image in the manifest
