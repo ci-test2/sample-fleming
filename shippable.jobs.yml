@@ -31,6 +31,7 @@ jobs:
     type: deploy
     steps:
       - IN: lb-release1
+      - IN: lb-ecscluster
       
   - name: lb-release2
     type: release
