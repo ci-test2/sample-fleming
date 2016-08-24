@@ -5,7 +5,9 @@ jobs:
       - IN: lb-imglb
       - IN: lb-dopt1
       - IN: lb-tg1
-
+    flags:
+      - release
+      
   - name: lb-ecsDeploy1
     type: deploy
     steps:
@@ -40,3 +42,25 @@ jobs:
       - IN: lb-ecsDeploy2
       - TASK: managed
         bump: major
+        
+  - name: lb-mani2
+    type: manifest
+    steps:
+      - IN: lb-imglb
+      - IN: lb-dopt1
+      - IN: lb-tg1
+    flags:
+      - loadbalancer
+        
+  - name: lb-ecsDeploy2
+    type: deploy
+    steps:
+      - IN: lb-mani2
+      - IN: lb-ecscluster
+      - IN: lb-loadb1
+        applyTo:
+          - manifest: lb-mani2 # it can only apply to one manifest
+            image: lb-imglb # it can only apply to one image in the manifest
+            port: 80
+      - TASK: managed
+        deployMethod: upgrade 
