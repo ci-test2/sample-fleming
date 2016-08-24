@@ -43,3 +43,11 @@ resources:
       memory: 200
       portMappings:
         - "80:80"  
+        
+  - name: lb-params1
+    type: params
+    version:
+      params:
+        MONGO_API_URL: "localhost:28017"
+        TEST: BETA
+        pipelinev2: fleming
