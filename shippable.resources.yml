@@ -21,10 +21,10 @@ resources:
     pointer:
       sourceName: EC2Contai-EcsElast-17A64D22JHQLM
 
-  - name: lb-loadb2
-    type: loadBalancer
-    pointer:
-      sourceName: shLoadBalancertest
+  # - name: lb-loadb2
+  #   type: loadBalancer
+  #   pointer:
+  #     sourceName: shLoadBalancer
 
   - name: lb-dopt1
     type: dockerOptions
