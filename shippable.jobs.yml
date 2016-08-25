@@ -48,8 +48,30 @@ jobs:
       - IN: lb-tg1
     flags:
       - loadbalancer
+      
+  - name: lb-mani3
+    type: manifest
+    steps:
+      - IN: lb-imglb3
+      - IN: lb-dopt2
+      - IN: lb-tg1
+    flags:
+      - loadbalancer
         
-  - name: lb-lbDeploy1
+  # - name: lb-lbDeploy1
+  #   type: deploy
+  #   steps:
+  #     - IN: lb-mani2
+  #     - IN: lb-ecscluster2
+  #     - IN: lb-loadb2
+  #       applyTo:
+  #         - manifest: lb-mani2 # it can only apply to one manifest
+  #           image: lb-imglb2 # it can only apply to one image in the manifest
+  #           port: 80
+  #     - TASK: managed
+  #       deployMethod: upgrade 
+        
+  - name: lb-lbDeploy2
     type: deploy
     steps:
       - IN: lb-mani2
@@ -59,13 +81,11 @@ jobs:
           - manifest: lb-mani2 # it can only apply to one manifest
             image: lb-imglb2 # it can only apply to one image in the manifest
             port: 80
-      - TASK: managed
-        deployMethod: upgrade 
-        
-  - name: lb-lbDeploy2
+            
+  - name: lb-lbDeploy3invalid
     type: deploy
     steps:
-      - IN: lb-mani2
+      - IN: lb-mani3
       - IN: lb-ecscluster2
       - IN: lb-loadb2
         applyTo:
