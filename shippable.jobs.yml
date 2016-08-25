@@ -2,9 +2,9 @@ jobs:
   - name: lb-mani1
     type: manifest
     steps:
-      - IN: lb-imglb
-      - IN: lb-dopt1
-      - IN: lb-params1
+      - IN: lb-imglb3
+     # - IN: lb-dopt1
+      #- IN: lb-params1
       - IN: lb-tg1
     flags:
       - release
@@ -13,12 +13,8 @@ jobs:
     type: deploy
     steps:
       - IN: lb-mani1
+      - IN: lb-dopts3
       - IN: lb-ecscluster
-      - IN: lb-loadb1
-        applyTo:
-          - manifest: lb-mani1 # it can only apply to one manifest
-            image: lb-imglb # it can only apply to one image in the manifest
-            port: 80
       - TASK: managed
         deployMethod: upgrade 
         
@@ -69,7 +65,7 @@ jobs:
   - name: lb-ecsDeploy4
     type: deploy
     steps:
-      - IN: lb-mani2
+      - IN: lb-mani1
       - IN: lb-ecscluster2
       - IN: lb-loadb2
         applyTo:
