@@ -96,7 +96,7 @@ jobs:
     steps:
       - IN: lb-mani4invalid
       - IN: lb-ecscluster2
-      - IN: lb-loadb2
+      - IN: lb-loadb2bg
         applyTo:
           - manifest: lb-mani4invalid # it can only apply to one manifest
             image: lb-imglb2 # it can only apply to one image in the manifest
