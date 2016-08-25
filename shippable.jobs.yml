@@ -62,7 +62,7 @@ jobs:
     type: manifest
     steps:
       - IN: lb-imglb2
-      - IN: lb-dopts2
+      - IN: lb-dopts2bg
       - IN: lb-tg2
     flags:
       - loadbalancerinvalid
