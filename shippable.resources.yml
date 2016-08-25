@@ -50,24 +50,24 @@ resources:
       sourceName : "loadBalanceTest" #name of the cluster we are deploying
       region: "us-east-1"
 
-  - name: lb-loadb1
+  - name: lb-loadb1up
     type: loadBalancer
     pointer:
       sourceName: EC2Contai-EcsElast-17A64D22JHQLM
 
-  - name: lb-loadb2
+  - name: lb-loadb2bg
     type: loadBalancer
     pointer:
       sourceName: shLoadBalancer
 
-  - name: lb-dopt1
+  - name: lb-dopt1up
     type: dockerOptions
     version:
       memory: 200
       portMappings:
-        - "80:80"  
+        - "8082:80"  
         
-  - name: lb-dopt2
+  - name: lb-dopt2bg
     type: dockerOptions
     version:
       memory: 200
