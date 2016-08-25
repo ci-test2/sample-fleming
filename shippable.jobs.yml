@@ -65,7 +65,7 @@ jobs:
       - IN: lb-imglb3
       - IN: lb-dopt4
         applyTo:
-          lb-imglb3
+          - lb-imglb3
       - IN: lb-tg2
     flags:
       - loadbalancerinvalid
@@ -112,8 +112,8 @@ jobs:
           #  image: lb-imglb2 # it can only apply to one image in the manifest
            # port: 60
            
-  - name: lb-lbDeploy4
-    type: deploy
-    steps:
-      - IN: lb-mani5
-      - IN: lb-ecscluster2
+  # - name: lb-lbDeploy4
+  #   type: deploy
+  #   steps:
+  #     - IN: lb-mani4invalid
+  #     - IN: lb-ecscluster2
