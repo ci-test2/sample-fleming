@@ -1,44 +1,44 @@
 jobs:
-  - name: lb-mani1
-    type: manifest
-    steps:
-      - IN: lb-imglb3
-     # - IN: lb-dopt1
-      #- IN: lb-params1
-      - IN: lb-tg1
-    flags:
-      - release
+  # - name: lb-mani1
+  #   type: manifest
+  #   steps:
+  #     - IN: lb-imglb3
+  #   # - IN: lb-dopt1
+  #     #- IN: lb-params1
+  #     - IN: lb-tg1
+  #   flags:
+  #     - release
       
-  - name: lb-ecsDeploy1
-    type: deploy
-    steps:
-      - IN: lb-mani1
-      - IN: lb-dopts3
-      - IN: lb-ecscluster
-      - TASK: managed
-        deployMethod: upgrade 
+  # - name: lb-ecsDeploy1
+  #   type: deploy
+  #   steps:
+  #     - IN: lb-mani1
+  #     - IN: lb-dopts3
+  #     - IN: lb-ecscluster
+  #     - TASK: managed
+  #       deployMethod: upgrade 
         
-  - name: lb-release1
-    type: release
-    steps:
-      - IN: lb-version1
-      - IN: lb-ecsDeploy1
-      - TASK: managed
-        bump: patch
+  # - name: lb-release1
+  #   type: release
+  #   steps:
+  #     - IN: lb-version1
+  #     - IN: lb-ecsDeploy1
+  #     - TASK: managed
+  #       bump: patch
         
-  - name: lb-ecsDeploy2
-    type: deploy
-    steps:
-      - IN: lb-release1
-      - IN: lb-ecscluster
+  # - name: lb-ecsDeploy2
+  #   type: deploy
+  #   steps:
+  #     - IN: lb-release1
+  #     - IN: lb-ecscluster
       
-  - name: lb-release2
-    type: release
-    steps:
-      - IN: lb-version2
-      - IN: lb-ecsDeploy2
-      - TASK: managed
-        bump: major
+  # - name: lb-release2
+  #   type: release
+  #   steps:
+  #     - IN: lb-version2
+  #     - IN: lb-ecsDeploy2
+  #     - TASK: managed
+  #       bump: major
         
   - name: lb-mani2
     type: manifest
@@ -49,7 +49,7 @@ jobs:
     flags:
       - loadbalancer
         
-  - name: lb-ecsDeploy3
+  - name: lb-lbDeploy1
     type: deploy
     steps:
       - IN: lb-mani2
@@ -57,18 +57,18 @@ jobs:
       - IN: lb-loadb2
         applyTo:
           - manifest: lb-mani2 # it can only apply to one manifest
-            image: lb-imglb # it can only apply to one image in the manifest
+            image: lb-imglb2 # it can only apply to one image in the manifest
             port: 80
       - TASK: managed
         deployMethod: upgrade 
         
-  - name: lb-ecsDeploy4
+  - name: lb-lbDeploy2
     type: deploy
     steps:
-      - IN: lb-mani1
+      - IN: lb-mani2
       - IN: lb-ecscluster2
       - IN: lb-loadb2
         applyTo:
           - manifest: lb-mani2 # it can only apply to one manifest
-            image: lb-imglb # it can only apply to one image in the manifest
+            image: lb-imglb2 # it can only apply to one image in the manifest
             port: 80
