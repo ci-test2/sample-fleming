@@ -99,5 +99,5 @@ jobs:
       - IN: lb-loadb2bg
         applyTo:
           - manifest: lb-mani4invalid # it can only apply to one manifest
-            image: lb-imglb2 # it can only apply to one image in the manifest
+          #  image: lb-imglb2 # it can only apply to one image in the manifest
           #  port: 80
