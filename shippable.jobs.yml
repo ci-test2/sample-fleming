@@ -62,7 +62,7 @@ jobs:
     type: manifest
     steps:
       - IN: lb-imglb3
-     # - IN: lb-dopts3
+      - IN: lb-dopts3
       - IN: lb-tg2
     flags:
       - loadbalancerinvalid
@@ -100,4 +100,4 @@ jobs:
         applyTo:
           - manifest: lb-mani4invalid # it can only apply to one manifest
             image: lb-imglb2 # it can only apply to one image in the manifest
-            port: 80
+            port: 60
