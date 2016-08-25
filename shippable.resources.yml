@@ -74,7 +74,7 @@ resources:
       portMappings:
         - "80:80" 
         
-  - name: lb-dopts3
+  - name: lb-dopt3
     type: dockerOptions
     version:
       memory: 100
