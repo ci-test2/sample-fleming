@@ -35,6 +35,14 @@ resources:
       sourceName: "shippabledocker/pipelinev2"
     seed:
       versionName: "deploy.1"
+      
+  - name: lb-imglb4
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.2"
 
   - name: lb-ecscluster
     type: cluster
@@ -85,10 +93,9 @@ resources:
     #integration: varshaarun-ecs
     version:
       memory: 100
-      links:
-        - "lb-imglb2"
+      links: "lb-imglb2"
       volumesFrom:
-        - "lb-imglb2:ro"
+        - "lb-imglb2:rw"
         
   - name: lb-params1
     type: params
