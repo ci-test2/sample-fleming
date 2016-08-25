@@ -63,6 +63,7 @@ jobs:
     steps:
       - IN: lb-imglb2
       - IN: lb-imglb3
+      - IN: lb-imglb4
       - IN: lb-dopt3
       - IN: lb-dopt4
         applyTo:
