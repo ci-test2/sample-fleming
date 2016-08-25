@@ -79,6 +79,15 @@ resources:
     version:
       memory: 100
       cpuShares: 0
+      
+  - name: lb-dopt4
+    type: dockerOptions
+    #integration: varshaarun-ecs
+    version:
+      links:
+        - "lb-imglb2"
+      volumesFrom:
+        - "lb-imglb2:ro"
         
   - name: lb-params1
     type: params
