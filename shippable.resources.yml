@@ -74,6 +74,12 @@ resources:
       portMappings:
         - "80:80" 
         
+  - name: flecs-dopts4
+    type: dockerOptions
+    version:
+      memory: 100
+      cpuShares: 0
+        
   - name: lb-params1
     type: params
     version:
