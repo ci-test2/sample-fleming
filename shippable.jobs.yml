@@ -40,55 +40,64 @@ jobs:
   #     - TASK: managed
   #       bump: major
         
-  - name: lb-mani2
+  - name: lb-mani2up
     type: manifest
     steps:
       - IN: lb-imglb2
-      - IN: lb-dopt2
+      - IN: lb-dopt1up
       - IN: lb-tg1
     flags:
-      - loadbalancer
+      - loadbalancerup
       
-  - name: lb-mani3
+  - name: lb-mani3bg
+    type: manifest
+    steps:
+      - IN: lb-imglb2
+      - IN: lb-dopt2bg
+      - IN: lb-tg1
+    flags:
+      - loadbalancerbg
+      
+  - name: lb-mani4invalid
     type: manifest
     steps:
       - IN: lb-imglb3
-      - IN: lb-dopt2
-      - IN: lb-tg1
+      - IN: lb-dopts3
+      - IN: lb-tg2
     flags:
-      - loadbalancer
+      - loadbalancerinvalid
         
-  # - name: lb-lbDeploy1
-  #   type: deploy
-  #   steps:
-  #     - IN: lb-mani2
-  #     - IN: lb-ecscluster2
-  #     - IN: lb-loadb2
-  #       applyTo:
-  #         - manifest: lb-mani2 # it can only apply to one manifest
-  #           image: lb-imglb2 # it can only apply to one image in the manifest
-  #           port: 80
-  #     - TASK: managed
-  #       deployMethod: upgrade 
-        
-  - name: lb-lbDeploy2
+  - name: lb-lbDeploy1up
     type: deploy
     steps:
-      - IN: lb-mani2
+      - IN: lb-mani2up
       - IN: lb-ecscluster2
-      - IN: lb-loadb2
+      - IN: lb-loadb1up
         applyTo:
-          - manifest: lb-mani2 # it can only apply to one manifest
+          - manifest: lb-mani2up # it can only apply to one manifest
+            image: lb-imglb2 # it can only apply to one image in the manifest
+            port: 80
+      - TASK: managed
+        deployMethod: upgrade 
+        
+  - name: lb-lbDeploy2bg
+    type: deploy
+    steps:
+      - IN: lb-mani3bg
+      - IN: lb-ecscluster2
+      - IN: lb-loadb2bg
+        applyTo:
+          - manifest: lb-mani3bg # it can only apply to one manifest
             image: lb-imglb2 # it can only apply to one image in the manifest
             port: 80
             
   - name: lb-lbDeploy3invalid
     type: deploy
     steps:
-      - IN: lb-mani3
+      - IN: lb-mani4invalid
       - IN: lb-ecscluster2
       - IN: lb-loadb2
         applyTo:
-          - manifest: lb-mani2 # it can only apply to one manifest
+          - manifest: lb-mani4invalid # it can only apply to one manifest
             image: lb-imglb2 # it can only apply to one image in the manifest
-            port: 80
+          #  port: 80
