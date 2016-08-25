@@ -84,6 +84,7 @@ resources:
     type: dockerOptions
     #integration: varshaarun-ecs
     version:
+      memory: 100
       links:
         - "lb-imglb2"
       volumesFrom:
