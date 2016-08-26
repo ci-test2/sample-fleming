@@ -108,27 +108,27 @@ jobs:
       #- IN: flecs-dopts4
       #- IN: fl-ecscluster
       
-  - name: fl-ecsdeployupmftomf
-    type: deploy
-    steps:
-      - IN: fl-man6redismftomf
-      - IN: fl-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
+  # - name: fl-ecsdeployupmftomf
+  #   type: deploy
+  #   steps:
+  #     - IN: fl-man6redismftomf
+  #     - IN: fl-ecscluster
+  #     - TASK: managed
+  #       deployMethod: upgrade
         
-  - name: fl-ecsdeploybginvalid
-    type: deploy
-    steps:
-      - IN: fl-man7invalid
-      - IN: fl-ecscluster
+  # - name: fl-ecsdeploybginvalid
+  #   type: deploy
+  #   steps:
+  #     - IN: fl-man7invalid
+  #     - IN: fl-ecscluster
       
-  - name: fl-ecsdeployuppm6436
-    type: deploy
-    steps:
-      - IN: fl-man8
-      - IN: fl-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
+  # - name: fl-ecsdeployuppm6436
+  #   type: deploy
+  #   steps:
+  #     - IN: fl-man8
+  #     - IN: fl-ecscluster
+  #     - TASK: managed
+  #       deployMethod: upgrade
       
   #- name: fl-tpdeployup
    # type: deploy
@@ -139,12 +139,12 @@ jobs:
     #  - TASK: managed
      #   deployMethod: upgrade
       
-  - name: fl-tpdeploybg
-    type: deploy
-    steps:
-      - IN: fl-man4entrypoint
-        switch: off
-      - IN: fl-tripubcluster
+  # - name: fl-tpdeploybg
+  #   type: deploy
+  #   steps:
+  #     - IN: fl-man4entrypoint
+  #       switch: off
+  #     - IN: fl-tripubcluster
       
  # - name: fl-gkedeployup
   #  type: deploy
@@ -168,12 +168,20 @@ jobs:
     #  - IN: fl-man10deployall
      # - IN: fl-dclcluster
         
-#  - name: fl-ddcdeploy
- #   type: deploy
-  #  steps:
-   #   - IN: fl-man10deployall
-    #  - IN: fl-ddccluster
+  - name: fl-gkedeploybg
+    type: deploy
+    steps:
+      - IN: fl-man10deployall
+      - IN: fl-gkecluster
       
+  - name: fl-gkedeployup
+    type: deploy
+    steps:
+      - IN: fl-man10deployall
+      - IN: fl-gkecluster
+      - TASK: managed
+        deployMethod: upgrade
+        
 #runSh
   - name: fl-inrunsh
     type: runSh
