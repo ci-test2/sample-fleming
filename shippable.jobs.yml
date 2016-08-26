@@ -61,28 +61,28 @@ jobs:
   #   steps:
   #     - IN: fl-img6redis
   #     - IN: fl-man1
-        switch: off
+  #      switch: off
       
-  - name: fl-man7invalid
-    type: manifest
-    steps:
-      - IN: fl-img1
-    #  - IN: fl-dopts6invalid
-      - IN: fl-tg7
+  # - name: fl-man7invalid
+  #   type: manifest
+  #   steps:
+  #     - IN: fl-img1
+  #   #  - IN: fl-dopts6invalid
+  #     - IN: fl-tg7
       
-  - name: fl-man8
-    type: manifest
-    steps:
-      - IN: fl-img9
-    #  - IN: fl-dopts6invalid
-      - IN: fl-tg8
+  # - name: fl-man8
+  #   type: manifest
+  #   steps:
+  #     - IN: fl-img9
+  #   #  - IN: fl-dopts6invalid
+  #     - IN: fl-tg8
       
-  - name: fl-man9
-    type: manifest
-    steps:
-      - IN: fl-img9
-    #  - IN: fl-dopts6invalid
-      - IN: fl-tg9
+  # - name: fl-man9
+  #   type: manifest
+  #   steps:
+  #     - IN: fl-img9
+  #   #  - IN: fl-dopts6invalid
+  #     - IN: fl-tg9
       
   - name: fl-man10deployall
     type: manifest
