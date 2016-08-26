@@ -53,3 +53,8 @@ triggers:
      type: trigger
      version:
        counter: 0
+       
+   - name: fl-tg12
+     type: trigger
+     version:
+       counter: 0
