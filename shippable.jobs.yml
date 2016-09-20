@@ -63,6 +63,17 @@ jobs:
       - script: echo 'failure runSh'
       - NOTIFY: slack-rs
       
+  - name: inrunsh2
+    type: runSh
+    steps:
+      - IN: sample-script-rs
+       # versionName: testsha
+      - IN: inrunsh
+      - IN: rs-tg2
+      - TASK:
+        - script: ls
+        - script: ./IN/sample-script-rs/gitRepo/echo.sh
+      
   - name: outrunsh
     type: runSh
     steps:
